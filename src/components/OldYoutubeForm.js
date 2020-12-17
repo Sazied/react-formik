@@ -48,13 +48,13 @@ const validationSchema = Yup.object({
 })
 
 
-
 const OldYoutubeForm = () => 
 {
   const formik = useFormik({
     initialValues,
     onSubmit,
     validationSchema,
+    validate
   });
 
   console.log('Visited Fields', formik.touched)
