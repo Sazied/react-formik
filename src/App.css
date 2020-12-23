@@ -23,7 +23,8 @@ input + label
 
 input[type='text'],
 input[type='email'],
-textarea
+textarea,
+select
 {
   display: block;
   width: 400px;
