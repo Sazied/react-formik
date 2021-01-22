@@ -57,6 +57,7 @@ const FormikContainer = () =>
                             control='input'
                             type='email'
                             label='Email'
+                            
                             name='email'
                         />
                         <FormikControl 
