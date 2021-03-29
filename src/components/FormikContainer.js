@@ -63,7 +63,7 @@ const FormikContainer = () =>
                         <FormikControl 
                             control='input'
                             type='email'
-                            label='Email'
+                            label='Email GITHUB ACTIONS'
                             name='email'
                             value={initialValues.email}
                         />
