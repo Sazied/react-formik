@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/react-formik/static/css/main.65c87136.chunk.css",
-    "main.js": "/react-formik/static/js/main.cf85ee9d.chunk.js",
-    "main.js.map": "/react-formik/static/js/main.cf85ee9d.chunk.js.map",
+    "main.js": "/react-formik/static/js/main.271b5c93.chunk.js",
+    "main.js.map": "/react-formik/static/js/main.271b5c93.chunk.js.map",
     "runtime-main.js": "/react-formik/static/js/runtime-main.18fc4db0.js",
     "runtime-main.js.map": "/react-formik/static/js/runtime-main.18fc4db0.js.map",
     "static/css/2.6e94d382.chunk.css": "/react-formik/static/css/2.6e94d382.chunk.css",
@@ -21,6 +21,6 @@
     "static/css/2.6e94d382.chunk.css",
     "static/js/2.217e6740.chunk.js",
     "static/css/main.65c87136.chunk.css",
-    "static/js/main.cf85ee9d.chunk.js"
+    "static/js/main.271b5c93.chunk.js"
   ]
 }
