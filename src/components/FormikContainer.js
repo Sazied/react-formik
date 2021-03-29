@@ -2,6 +2,7 @@ import React from 'react'
 import { Formik, Form } from 'formik'
 import * as Yup from 'yup'
 import FormikControl from './FormikControl'
+import { Effect } from 'formik-effect'
 
 const FormikContainer = () => 
 {
@@ -53,12 +54,18 @@ const FormikContainer = () =>
             {
                 formik => (
                     <Form>
+                        <Effect 
+                            onValidationChange={(a, b) =>
+                            {
+                                console.log(a, b);
+                            }}
+                        />
                         <FormikControl 
                             control='input'
                             type='email'
                             label='Email'
-                            
                             name='email'
+                            value={initialValues.email}
                         />
                         <FormikControl 
                             control='textarea'

@@ -8,16 +8,18 @@ const CheckboxGroup = (props) =>
 {
     const { label, name, options, ...rest } = props
 
+    
     return (
         <div className='form-control'>
             <label htmlFor={name}>{label}</label>
             <Field
                 name={name}
                 {...rest}
-            >
+                >
                 {
                     ({field}) => { 
-                        console.log(field.value)
+                        // console.log('FIELD', field)
+                        // console.log(field.value)
                         return options.map(option => {
                             return (
                                 <React.Fragment key={option.key} >

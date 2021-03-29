@@ -12,23 +12,31 @@ const Select = (props) =>
         <div className='form-control'>
             <label htmlFor={name}>{label}</label>
             <Field
-                as='select'
-                id={name}
                 name={name}
-                {...rest}    
+                {...rest}
             >
-                {
-                    options.map(option => {
-                        return(
-                            <option
-                                key={option.value}
-                                value={option.value}
-                            >
-                                {option.key}
-                            </option>
-                        )
-                    })
-                }
+                {({field, meta, form}) => {
+                    // console.log('FIELD', field)
+                    return(
+                        <select
+                            id={name}
+                            {...field}
+                        >
+                            {
+                                options.map(option => {
+                                    return(
+                                        <option
+                                            key={option.value}
+                                            value={option.value}
+                                        >
+                                            {option.key}
+                                        </option>
+                                    )
+                                })
+                            }
+                        </select>
+                    )
+                }}
             </Field>
             <ErrorMessage name={name} component={TextError} />
         </div>
