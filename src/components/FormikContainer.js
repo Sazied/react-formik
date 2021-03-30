@@ -3,6 +3,7 @@ import { Formik, Form } from 'formik'
 import * as Yup from 'yup'
 import FormikControl from './FormikControl'
 import { Effect } from 'formik-effect'
+import { Link } from 'react-router-dom'
 
 const FormikContainer = () => 
 {
@@ -46,60 +47,63 @@ const FormikContainer = () =>
     const onSubmit = values => console.log('Form Data', values)
 
     return (
-        <Formik
-            initialValues={initialValues}
-            validationSchema={validationSchema}
-            onSubmit={onSubmit}
-        >
-            {
-                formik => (
-                    <Form>
-                        <Effect 
-                            onValidationChange={(a, b) =>
-                            {
-                                console.log(a, b);
-                            }}
-                        />
-                        <FormikControl 
-                            control='input'
-                            type='email'
-                            label='Email GITHUB ACTIONS'
-                            name='email'
-                            value={initialValues.email}
-                        />
-                        <FormikControl 
-                            control='textarea'
-                            label='Description'
-                            name='description'
-                        />
-                        <FormikControl 
-                            control='select'
-                            label='Select an Option HELLOOOOO!!!'
-                            name='selectOption'
-                            options={dropdownOptions}
-                        />
-                        <FormikControl 
-                            control='radio'
-                            label='Select an Option'
-                            name='radioOption'
-                            options={radioOptions}
-                        />
-                        <FormikControl 
-                            control='checkbox'
-                            label='Pick Options'
-                            name='checkboxOption'
-                            options={checkboxOptions}
-                        />
-                        <FormikControl 
-                            control='date'
-                            label='Pick a Date'
-                            name='date'
-                        />
-                        <button type='submit'>Submit</button>
-                    </Form>
-                )
-            }
-        </Formik>
+        <>
+            <Link to='/old-form'>Old Form</Link>
+            <Formik
+                initialValues={initialValues}
+                validationSchema={validationSchema}
+                onSubmit={onSubmit}
+            >
+                {
+                    formik => (
+                        <Form>
+                            <Effect 
+                                onValidationChange={(a, b) =>
+                                {
+                                    console.log(a, b);
+                                }}
+                            />
+                            <FormikControl 
+                                control='input'
+                                type='email'
+                                label='Email GITHUB ACTIONS'
+                                name='email'
+                                value={initialValues.email}
+                            />
+                            <FormikControl 
+                                control='textarea'
+                                label='Description'
+                                name='description'
+                            />
+                            <FormikControl 
+                                control='select'
+                                label='Select an Option HELLOOOOO!!!'
+                                name='selectOption'
+                                options={dropdownOptions}
+                            />
+                            <FormikControl 
+                                control='radio'
+                                label='Select an Option'
+                                name='radioOption'
+                                options={radioOptions}
+                            />
+                            <FormikControl 
+                                control='checkbox'
+                                label='Pick Options'
+                                name='checkboxOption'
+                                options={checkboxOptions}
+                            />
+                            <FormikControl 
+                                control='date'
+                                label='Pick a Date'
+                                name='date'
+                            />
+                            <button type='submit'>Submit</button>
+                        </Form>
+                    )
+                }
+            </Formik>
+        </>
     )
 }
 
