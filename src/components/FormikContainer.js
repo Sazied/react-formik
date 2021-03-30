@@ -66,7 +66,7 @@ const FormikContainer = () =>
                             <FormikControl 
                                 control='input'
                                 type='email'
-                                label='Email GITHUB ACTIONS'
+                                label='Email'
                                 name='email'
                                 value={initialValues.email}
                             />
@@ -77,7 +77,7 @@ const FormikContainer = () =>
                             />
                             <FormikControl 
                                 control='select'
-                                label='Select an Option HELLOOOOO!!!'
+                                label='Select an Option'
                                 name='selectOption'
                                 options={dropdownOptions}
                             />
