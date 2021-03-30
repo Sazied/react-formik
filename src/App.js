@@ -20,6 +20,7 @@ import FormikContainer from './components/FormikContainer';
 import YoutubeForm from './components/YoutubeForm';
 import Profile from './components/Profile';
 import LogoutButton from './components/LogoutButton';
+import LoginButton from './components/LoginButton';
 
 
 function App()
@@ -44,21 +45,16 @@ function App()
       <Router>
         <div className="App">
           <Switch>
-            <Route 
-              exact
-              path='/'
-              render={() => <Profile />}
-            />
             <Route
               exact
               path='/new-form'
               render={() => 
                 isDemo ? (
                   <FormikContainer />
-                ) : (
-                  <Redirect to='/' />
-                )
-              }
+                  ) : (
+                    <Redirect to='/' />
+                    )
+                  }
             />
             <Route
               exact
@@ -68,8 +64,12 @@ function App()
                   <YoutubeForm />
                 ) : (
                   <Redirect to='/' />
-                )
-              }
+                  )
+                }
+            />
+            <Route 
+              path='/'
+              render={() => <Profile />}
             />
           </Switch>
         </div>
