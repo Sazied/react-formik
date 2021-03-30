@@ -49,22 +49,22 @@ function App()
               exact
               path='/new-form'
               render={() => 
-                isDemo ? (
+                // isDemo ? (
                   <FormikContainer />
-                  ) : (
-                    <Redirect to='/' />
-                    )
+                  // ) : (
+                  //   <Redirect to='/' />
+                  //   )
                   }
             />
             <Route
               exact
               path='/old-form'
               render={() => 
-                isDemo ? (
+                // isDemo ? (
                   <YoutubeForm />
-                ) : (
-                  <Redirect to='/' />
-                  )
+                // ) : (
+                //   <Redirect to='/' />
+                //   )
                 }
             />
             <Route 
