@@ -38,6 +38,9 @@ function App()
   useEffect(() =>{
     isAuth();
   })
+  
+  console.log(window.location)
+  console.log(window.location.origin)
 
   return (
     <Fragment>
