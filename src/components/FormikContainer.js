@@ -48,7 +48,6 @@ const FormikContainer = () =>
 
     return (
         <>
-            <Link to='/old-form'>Old Form</Link>
             <Formik
                 initialValues={initialValues}
                 validationSchema={validationSchema}

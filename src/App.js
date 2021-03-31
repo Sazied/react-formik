@@ -31,7 +31,7 @@ function App()
   
   function isAuth()
   {
-    if(user?.email === 'sazied@polyunity.com') setIsDemo(true)
+    if(user?.email === 'sazied@polyunity.com' || user?.email === 'marc-andre@polyunity.com') setIsDemo(true)
   }
   
   
@@ -44,41 +44,30 @@ function App()
       <HashRouter basename='/'>
         <div className="App">
           {/* <Switch> */}
-            <ul>
-              <li><Link to='/'>Home</Link></li>
-              <li><Link to='/newform'>New From</Link></li>
-              <li><Link to='/oldform'>Old From</Link></li>
-            </ul>
-            
-            <hr />
-            
             <Route
               exact
               path='/'
-              // render={() => <Profile />}
-              component={Profile}
+              render={() => <Profile />}
             />
             <Route
               path='/newform'
-              // render={() => 
-              //   // isDemo ? (
-              //     <FormikContainer />
-              //     // ) : (
-              //     //   <Redirect to='/' />
-              //     //   )
-              //     }
-              component={FormikContainer}
+              render={() => 
+                isDemo ? (
+                  <FormikContainer />
+                  ) : (
+                    <Redirect to='/' />
+                    )
+                  }
             />
             <Route
               path='/oldform'
-              // render={() => 
-              //   // isDemo ? (
-              //     <YoutubeForm />
-              //   // ) : (
-              //   //   <Redirect to='/' />
-              //   //   )
-              //   }
-              component={YoutubeForm}
+              render={() => 
+                isDemo ? (
+                  <YoutubeForm />
+                ) : (
+                  <Redirect to='/' />
+                  )
+                }
             />
           {/* </Switch> */}
         </div>

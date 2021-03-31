@@ -50,7 +50,6 @@ const YoutubeForm = () =>
 
   return (
     <>
-      <Link to='new-form'>New Form</Link>
       <Formik
         initialValues={initialValues}
         onSubmit={onSubmit}
