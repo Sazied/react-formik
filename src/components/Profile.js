@@ -47,8 +47,8 @@ const Profile = () =>
     //   </div>
     // ) : (<LoginButton />)
 				<div>
-					<Link to='new-form'>New From</Link>
-					<Link to='old-form'>Old From</Link>
+					<Link to='/newform'>New From</Link>
+					<Link to='/oldform'>Old From</Link>
 				</div>
   );
 };

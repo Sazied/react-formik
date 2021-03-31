@@ -2,10 +2,10 @@ import logo from './logo.svg';
 import './App.css';
 
 
-import React, { Fragment, useState, useEffect } from 'react';
+import React, { Fragment, useState, useEffect, Component} from 'react';
 
 import {
-  HashRouter as Router,
+  HashRouter,
   Switch,
   Route,
   Redirect,
@@ -38,42 +38,51 @@ function App()
   useEffect(() =>{
     isAuth();
   })
-  
-  
+
   return (
     <Fragment>
-      <Router>
+      <HashRouter basename='/'>
         <div className="App">
-          <Switch>
+          {/* <Switch> */}
+            <ul>
+              <li><Link to='/'>Home</Link></li>
+              <li><Link to='/newform'>New From</Link></li>
+              <li><Link to='/oldform'>Old From</Link></li>
+            </ul>
+            
+            <hr />
+            
             <Route
               exact
-              path='/new-form'
-              render={() => 
-                // isDemo ? (
-                  <FormikContainer />
-                  // ) : (
-                  //   <Redirect to='/' />
-                  //   )
-                  }
-            />
-            <Route
-              exact
-              path='/old-form'
-              render={() => 
-                // isDemo ? (
-                  <YoutubeForm />
-                // ) : (
-                //   <Redirect to='/' />
-                //   )
-                }
-            />
-            <Route 
               path='/'
-              render={() => <Profile />}
+              // render={() => <Profile />}
+              component={Profile}
             />
-          </Switch>
+            <Route
+              path='/newform'
+              // render={() => 
+              //   // isDemo ? (
+              //     <FormikContainer />
+              //     // ) : (
+              //     //   <Redirect to='/' />
+              //     //   )
+              //     }
+              component={FormikContainer}
+            />
+            <Route
+              path='/oldform'
+              // render={() => 
+              //   // isDemo ? (
+              //     <YoutubeForm />
+              //   // ) : (
+              //   //   <Redirect to='/' />
+              //   //   )
+              //   }
+              component={YoutubeForm}
+            />
+          {/* </Switch> */}
         </div>
-      </Router>
+      </HashRouter>
     </Fragment>
   );
 }
