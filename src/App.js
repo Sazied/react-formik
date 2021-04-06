@@ -5,7 +5,7 @@ import './App.css';
 import React, { Fragment, useState, useEffect, Component} from 'react';
 
 import {
-  HashRouter,
+  BrowserRouter as Router,
   Switch,
   Route,
   Redirect,
@@ -44,7 +44,7 @@ function App()
 
   return (
     <Fragment>
-      <HashRouter basename='/'>
+      <Router basename='/'>
         <div className="App">
           {/* <Switch> */}
             <Route
@@ -76,7 +76,7 @@ function App()
             />
           {/* </Switch> */}
         </div>
-      </HashRouter>
+      </Router>
     </Fragment>
   );
 }
