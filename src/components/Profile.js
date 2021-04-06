@@ -32,11 +32,17 @@ const Profile = () =>
       <div>
         {
           isDemo ? (
-            <ul>
-              <li><Link to='/'>Home</Link></li>
-              <li><Link to='/newform'>New From</Link></li>
-              <li><Link to='/oldform'>Old From</Link></li>
-            </ul>
+            <>
+              <img 
+                src="img/sazied.jpg"
+                alt="profile_image"
+              />
+              <ul>
+                <li><Link to='/'>Home</Link></li>
+                <li><Link to='/newform'>New From</Link></li>
+                <li><Link to='/oldform'>Old From</Link></li>
+              </ul>
+            </>
           ) : (
             <h1>Please request Demo</h1>
           )
