@@ -10,6 +10,7 @@ import {
   Route,
   Redirect,
   Link,
+  useLocation
 } from 'react-router-dom';
 
 import { useAuth0 } from "@auth0/auth0-react";
@@ -25,7 +26,8 @@ import LoginButton from './components/LoginButton';
 
 function App()
 {
-  const [ isDemo, setIsDemo ] = useState(false);
+  // const location = useLocation();
+  // const [ isDemo, setIsDemo ] = useState(false);
   
   // const { user, isAuthenticated, isLoading } = useAuth0();
   
@@ -46,7 +48,7 @@ function App()
     <Fragment>
       <Router basename='/'>
         <div className="App">
-          {/* <Switch> */}
+          <Switch>
             <Route
               exact
               path='/'
@@ -74,7 +76,7 @@ function App()
                   <YoutubeForm />
                 }
             />
-          {/* </Switch> */}
+          </Switch>
         </div>
       </Router>
     </Fragment>
