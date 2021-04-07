@@ -26,7 +26,7 @@ import LoginButton from './components/LoginButton';
 
 function App()
 {
-  // const location = useLocation();
+  const location = useLocation();
   // const [ isDemo, setIsDemo ] = useState(false);
   
   // const { user, isAuthenticated, isLoading } = useAuth0();
@@ -52,7 +52,7 @@ function App()
             src='logo192.png'
             alt='react-logo'
           />
-          <Switch>
+          <Switch location={location} key={location.pathname}>
             <Route
               exact
               path='/'

@@ -1,5 +1,4 @@
 {
-  "homepage": "https://sazied.github.io/react-formik",
   "name": "react-formik",
   "version": "0.1.0",
   "private": true,
@@ -49,5 +48,6 @@
   "devDependencies": {
     "gh-pages": "^3.1.0",
     "react-scripts": "^4.0.1"
-  }
+  },
+  "homepage": "https://sazied.github.io/react-formik"
 }
