@@ -46,7 +46,7 @@ function App()
 
   return (
     <Fragment>
-      <Router basename={process.env.PUBLIC_URL}>
+      <Router>
         <div className="App">
           <Switch>
             <Route
