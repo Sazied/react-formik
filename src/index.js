@@ -13,7 +13,7 @@ ReactDOM.render(
       clientId="QBB6awxGUWtHx8a5YZsAJd8AXwS7y0GM"
       redirectUri={`${window.location.origin}/react-formik`}
     > */}
-      <AppRouter />
+      <App />
     {/* </Auth0Provider> */}
   </React.StrictMode>,
   document.getElementById('root')

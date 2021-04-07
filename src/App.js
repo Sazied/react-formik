@@ -26,7 +26,6 @@ import LoginButton from './components/LoginButton';
 
 function App()
 {
-  const location = useLocation();
   // const [ isDemo, setIsDemo ] = useState(false);
   
   // const { user, isAuthenticated, isLoading } = useAuth0();
@@ -46,6 +45,7 @@ function App()
 
   return (
     <Fragment>
+      <Router basename={process.env.PUBLIC_URL}>
         <div className="App">
           <li><Link to='/'>Home</Link></li>
           <img 
@@ -85,6 +85,7 @@ function App()
             />
           </Switch>
         </div>
+      </Router>
     </Fragment>
   );
 }
