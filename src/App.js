@@ -46,7 +46,7 @@ function App()
 
   return (
     <Fragment>
-      <Router basename='/'>
+      <Router basename={process.env.PUBLIC_URL}>
         <div className="App">
           <Switch>
             <Route
@@ -75,6 +75,9 @@ function App()
                 //   )
                   <YoutubeForm />
                 }
+            />
+            <Route 
+              component={() => (<h1>404 NOT FOUND</h1>)}
             />
           </Switch>
         </div>
