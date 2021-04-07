@@ -48,6 +48,10 @@ function App()
     <Fragment>
       <Router basename={process.env.PUBLIC_URL}>
         <div className="App">
+          <img 
+            src='logo192.png'
+            alt='react-logo'
+          />
           <Switch>
             <Route
               exact
