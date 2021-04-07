@@ -60,7 +60,6 @@ const Profile = () =>
       alt="profile_image"
     />
     <ul>
-      <li><Link to='/'>Home</Link></li>
       <li><Link to='/newform'>New From</Link></li>
       <li><Link to='/oldform'>Old From</Link></li>
     </ul>

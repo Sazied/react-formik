@@ -48,11 +48,12 @@ function App()
     <Fragment>
       <Router basename={process.env.PUBLIC_URL}>
         <div className="App">
+          <li><Link to='/'>Home</Link></li>
           <img 
             src='logo192.png'
             alt='react-logo'
           />
-          <Switch location={location} key={location.pathname}>
+          <Switch>
             <Route
               exact
               path='/'
