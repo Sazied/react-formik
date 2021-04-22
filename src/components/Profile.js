@@ -56,8 +56,8 @@ const Profile = () =>
   // );
   <>
     <img
-      src="img/sazied.jpg"
-      alt="profile_image"
+      src={`${process.env.PUBLIC_URL}/img/sazied.jpg`}
+      alt={`profile_image`}
     />
     <ul>
       <li><Link to='/newform'>New From</Link></li>

@@ -49,7 +49,7 @@ function App()
         <div className="App">
           <li><Link to='/'>Home</Link></li>
           <img 
-            src='logo192.png'
+            src={`${process.env.PUBLIC_URL}/logo192.png`}
             alt='react-logo'
           />
           <Switch>
