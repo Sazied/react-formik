@@ -26,19 +26,19 @@ import LoginButton from './components/LoginButton';
 
 function App()
 {
-  // const [ isDemo, setIsDemo ] = useState(false);
+  const [ isDemo, setIsDemo ] = useState(false);
   
-  // const { user, isAuthenticated, isLoading } = useAuth0();
+  const { user, isAuthenticated, isLoading } = useAuth0();
   
-  // function isAuth()
-  // {
-  //   if(user?.email === 'sazied@polyunity.com' || user?.email === 'marc-andre@polyunity.com') setIsDemo(true)
-  // }
+  function isAuth()
+  {
+    if(user?.email === 'sazied@polyunity.com' || user?.email === 'marc-andre@polyunity.com') setIsDemo(true)
+  }
   
   
-  // useEffect(() =>{
-  //   isAuth();
-  // })
+  useEffect(() =>{
+    isAuth();
+  })
   
   console.log(window.location)
   console.log(window.location.origin)
@@ -61,23 +61,21 @@ function App()
             <Route
               path='/newform'
               render={() => 
-                // isDemo ? (
-                  // <FormikContainer />
-                  // ) : (
-                  //   <Redirect to='/' />
-                  //   )
+                isDemo ? (
                   <FormikContainer />
+                  ) : (
+                    <Redirect to='/' />
+                    )
                   }
             />
             <Route
               path='/oldform'
               render={() => 
-                // isDemo ? (
-                //   <YoutubeForm />
-                // ) : (
-                //   <Redirect to='/' />
-                //   )
+                isDemo ? (
                   <YoutubeForm />
+                ) : (
+                  <Redirect to='/' />
+                  )
                 }
             />
             <Route 
