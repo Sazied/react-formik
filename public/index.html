@@ -37,7 +37,7 @@
       // When the single page app is loaded further down in this file,
       // the correct url will be waiting in the browser's history for
       // the single page app to route accordingly.
-      {% comment %} (function(l) {
+      (function(l) {
         if (l.search) {
           var q = {};
           l.search.slice(1).split('&').forEach(function(v) {
@@ -56,8 +56,8 @@
         }
         
         console.log(window.location)
-      }(window.location)) {% endcomment %}
-          (function(l) {
+      }(window.location))
+          {% comment %} (function(l) {
         if (l.search[1] === '/' ) {
           var decoded = l.search.slice(1).split('&').map(function(s) { 
             return s.replace(/~and~/g, '&')
@@ -66,7 +66,7 @@
               l.pathname.slice(0, -1) + decoded + l.hash
           );
         }
-      }(window.location))
+      }(window.location)) {% endcomment %}
     </script>
   </head>
   <body>
