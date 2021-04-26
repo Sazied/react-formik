@@ -60,21 +60,23 @@ function App()
             <Route
               path='/newform'
               render={() => 
-                isDemo ? (
+                // isDemo ? (
+                  // <FormikContainer />
+                  // ) : (
+                  //   <Redirect to='/' />
+                  //   )
                   <FormikContainer />
-                  ) : (
-                    <Redirect to='/' />
-                    )
                   }
             />
             <Route
               path='/oldform'
               render={() => 
-                isDemo ? (
+                // isDemo ? (
+                //   <YoutubeForm />
+                // ) : (
+                //   <Redirect to='/' />
+                //   )
                   <YoutubeForm />
-                ) : (
-                  <Redirect to='/' />
-                  )
                 }
             />
             <Route 
