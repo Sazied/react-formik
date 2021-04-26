@@ -47,7 +47,6 @@ function App()
     <Fragment>
       <Router basename={process.env.PUBLIC_URL}>
         <div className="App">
-          <li><Link to='/'>Home</Link></li>
           <img 
             src={`${process.env.PUBLIC_URL}/logo192.png`}
             alt='react-logo'
