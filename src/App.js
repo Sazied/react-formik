@@ -5,7 +5,7 @@ import './App.css';
 import React, { Fragment, useState, useEffect, Component} from 'react';
 
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Switch,
   Route,
   Redirect,
@@ -51,7 +51,7 @@ function App()
             src={`${process.env.PUBLIC_URL}/logo192.png`}
             alt='react-logo'
           />
-          <Switch>
+          {/* <Switch> */}
             <Route
               exact
               path='/'
@@ -80,7 +80,7 @@ function App()
             <Route 
               component={() => (<h1>404 NOT FOUND</h1>)}
             />
-          </Switch>
+          {/* </Switch> */}
         </div>
       </Router>
     </Fragment>
