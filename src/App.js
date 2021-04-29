@@ -32,7 +32,7 @@ function App()
   
   function isAuth()
   {
-    if(user?.email === 'sazied@polyunity.com' || user?.email === 'marc-andre@polyunity.com') setIsDemo(true)
+    if((user?.email === 'sazied@polyunity.com' || user?.email === 'marc-andre@polyunity.com') && isAuthenticated) setIsDemo(true)
   }
   
   
