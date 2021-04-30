@@ -30,6 +30,8 @@ function App()
   
   const { user, isAuthenticated, isLoading } = useAuth0();
   
+  const location = useLocation();
+  
   function isAuth()
   {
     if((user?.email === 'sazied@polyunity.com' || user?.email === 'marc-andre@polyunity.com') && isAuthenticated) setIsDemo(true)
@@ -51,7 +53,7 @@ function App()
             src={`${process.env.PUBLIC_URL}/logo192.png`}
             alt='react-logo'
           />
-          {/* <Switch> */}
+          <Switch location={location} key={location.pathname}>
             <Route
               exact
               path='/'
@@ -80,7 +82,7 @@ function App()
             <Route 
               component={() => (<h1>404 NOT FOUND</h1>)}
             />
-          {/* </Switch> */}
+          </Switch>
         </div>
       </Router>
     </Fragment>
