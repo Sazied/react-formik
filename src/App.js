@@ -30,6 +30,8 @@ function App()
   
   const { user, isAuthenticated, isLoading } = useAuth0();
   
+  const location = window.location.host.includes('github.io');
+  
   function isAuth()
   {
     if((user?.email === 'sazied@polyunity.com' || user?.email === 'marc-andre@polyunity.com') && isAuthenticated) setIsDemo(true)
@@ -40,9 +42,7 @@ function App()
     isAuth();
   })
   
-  console.log(window.location)
-  console.log(window.location.origin)
-
+  
   return (
     <Fragment>
       <Router basename={process.env.PUBLIC_URL}>
@@ -59,23 +59,31 @@ function App()
             />
             <Route
               path='/newform'
-              render={() => 
+              render={() =>
+                location ? (
                 isDemo ? (
                   <FormikContainer />
                   ) : (
                     <Redirect to='/' />
-                    )
-                  }
+                  )
+                ) : (
+                  <FormikContainer />
+                )
+              }
             />
             <Route
               path='/oldform'
-              render={() => 
-                isDemo ? (
+              render={() =>
+                location ? (
+                  isDemo ? (
+                    <YoutubeForm />
+                  ) : (
+                    <Redirect to='/' />
+                    )
+                  ) : (
                   <YoutubeForm />
-                ) : (
-                  <Redirect to='/' />
-                  )
-                }
+                )
+              }
             />
             <Route 
               component={() => (<h1>404 NOT FOUND</h1>)}

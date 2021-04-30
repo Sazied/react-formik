@@ -6,15 +6,24 @@ import reportWebVitals from './reportWebVitals';
 import { Auth0Provider } from '@auth0/auth0-react';
 import AppRouter from './components/AppRouter';
 
+
+const location = window.location.host.includes('github.io');
+
 ReactDOM.render(
   <React.StrictMode>
-    <Auth0Provider
-      domain="dev-vaa1s4lm.us.auth0.com"
-      clientId="QBB6awxGUWtHx8a5YZsAJd8AXwS7y0GM"
-      redirectUri={`${window.location.origin}/react-formik`}
-    >
-      <App />
-    </Auth0Provider>
+    {
+      location ? (
+        <Auth0Provider
+          domain="dev-vaa1s4lm.us.auth0.com"
+          clientId="QBB6awxGUWtHx8a5YZsAJd8AXwS7y0GM"
+          redirectUri={`${window.location.origin}/react-formik`}
+        >
+          <App />
+        </Auth0Provider>
+      ) : (
+        <App />
+      )
+    }
   </React.StrictMode>,
   document.getElementById('root')
 );

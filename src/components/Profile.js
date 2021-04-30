@@ -13,6 +13,8 @@ const Profile = () =>
   
   const { user, isAuthenticated, isLoading } = useAuth0();
   
+  const location = window.location.host.includes('github.io');
+  
   function isAuth()
   {
     if(user?.email === 'sazied@polyunity.com' || user?.email === 'marc-andre@polyunity.com') setIsDemo(true)
@@ -23,36 +25,50 @@ const Profile = () =>
     isAuth();
   })
 
-  if (isLoading) {
+  if (location && isLoading) {
     return <div>Loading ...</div>;
   }
 
   return (
-    isAuthenticated ? (
-      <div>
-        {
-          isDemo ? (
-            <>
-              <img
-                src="img/sazied.jpg"
-                alt="profile_image"
-              />
-              <ul>
-                <li><Link to='/'>Home</Link></li>
-                <li><Link to='/newform'>New From</Link></li>
-                <li><Link to='/oldform'>Old From</Link></li>
-              </ul>
-            </>
-          ) : (
-            <h1>Please request Demo</h1>
-          )
-        }
-				<LogoutButton />
-        <img src={user.picture} alt={user.name} />
-        <h2>{user.name}</h2>
-        <p>{user.email}</p>
-      </div>
-    ) : (<LoginButton />)
+    location ? (
+      isAuthenticated ? (
+        <div>
+          {
+            isDemo ? (
+              <>
+                <img
+                  src="img/sazied.jpg"
+                  alt="profile_image"
+                />
+                <ul>
+                  <li><Link to='/'>Home</Link></li>
+                  <li><Link to='/newform'>New From</Link></li>
+                  <li><Link to='/oldform'>Old From</Link></li>
+                </ul>
+              </>
+            ) : (
+              <h1>Please request Demo</h1>
+            )
+          }
+          <LogoutButton />
+          <img src={user.picture} alt={user.name} />
+          <h2>{user.name}</h2>
+          <p>{user.email}</p>
+        </div>
+      ) : (<LoginButton />)
+    ) : (
+      <>
+      <img
+        src={`${process.env.PUBLIC_URL}/img/sazied.jpg`}
+        alt="profile_image"
+      />
+      <ul>
+        <li><Link to='/'>Home</Link></li>
+        <li><Link to='/newform'>New From</Link></li>
+        <li><Link to='/oldform'>Old From</Link></li>
+      </ul>
+    </>
+    )
   );
 };
 
