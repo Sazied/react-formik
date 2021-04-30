@@ -5,7 +5,7 @@ import './App.css';
 import React, { Fragment, useState, useEffect, Component} from 'react';
 
 import {
-  HashRouter as Router,
+  BrowserRouter as Router,
   Switch,
   Route,
   Redirect,
@@ -47,7 +47,7 @@ function App()
 
   return (
     <Fragment>
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
         <div className="App">
           <img 
             src={`${process.env.PUBLIC_URL}/logo192.png`}
