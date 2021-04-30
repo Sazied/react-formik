@@ -32,6 +32,8 @@ function App()
   
   const location = useLocation();
   
+  console.log('WHAT IS THIS', location);
+  
   function isAuth()
   {
     if((user?.email === 'sazied@polyunity.com' || user?.email === 'marc-andre@polyunity.com') && isAuthenticated) setIsDemo(true)
@@ -41,9 +43,6 @@ function App()
   useEffect(() =>{
     isAuth();
   })
-  
-  console.log(window.location)
-  console.log(window.location.origin)
 
   return (
     <Fragment>
@@ -53,7 +52,7 @@ function App()
             src={`${process.env.PUBLIC_URL}/logo192.png`}
             alt='react-logo'
           />
-          <Switch location={location} key={location.pathname}>
+          <Switch>
             <Route
               exact
               path='/'
