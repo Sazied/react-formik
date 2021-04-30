@@ -13,7 +13,7 @@ const Profile = () =>
   
   const { user, isAuthenticated, isLoading } = useAuth0();
   
-  const location = window.location.host.includes('github.io');
+  const location = window.location.host.includes('github.ioqqq');
   
   function isAuth()
   {

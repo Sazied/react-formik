@@ -7,7 +7,7 @@ import { Auth0Provider } from '@auth0/auth0-react';
 import AppRouter from './components/AppRouter';
 
 
-const location = window.location.host.includes('github.io');
+const location = window.location.host.includes('github.ioqqq');
 
 ReactDOM.render(
   <React.StrictMode>
