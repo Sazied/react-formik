@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { useHistory } from 'react-router-dom';
+import { useHistory, BrowserRouter as Router } from 'react-router-dom';
 
 
 import './index.css';
@@ -17,11 +17,15 @@ ReactDOM.render(
   <React.StrictMode>
     {
       location ? (
-        <Auth0ProviderWithHistory>
-          <App />
-        </Auth0ProviderWithHistory>
+        <Router basename={process.env.PUBLIC_URL}>
+          <Auth0ProviderWithHistory>
+            <App />
+          </Auth0ProviderWithHistory>
+        </Router>
       ) : (
-        <App />
+        <Router basename={process.env.PUBLIC_URL}>
+          <App />
+        </Router>
       )
     }
   </React.StrictMode>,

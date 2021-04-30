@@ -46,7 +46,6 @@ function App()
   
   return (
     <Fragment>
-      <Router basename={process.env.PUBLIC_URL}>
         <div className="App">
           <img 
             src={`${process.env.PUBLIC_URL}/logo192.png`}
@@ -91,7 +90,6 @@ function App()
             />
           </Switch>
         </div>
-      </Router>
     </Fragment>
   );
 }
