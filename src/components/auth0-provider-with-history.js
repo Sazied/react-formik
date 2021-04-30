@@ -19,7 +19,7 @@ const Auth0ProviderWithHistory = ({ children }) =>
 		<Auth0Provider
 			domain="dev-vaa1s4lm.us.auth0.com"
 			clientId="QBB6awxGUWtHx8a5YZsAJd8AXwS7y0GM"
-			redirectUri={`${window.location.origin}/react-formik`}
+			redirectUri={`${window.location.origin}`}
 			onRedirectCallback={onRedirectCallback}
 		>
 			{children}
