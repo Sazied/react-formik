@@ -30,10 +30,6 @@ function App()
   
   const { user, isAuthenticated, isLoading } = useAuth0();
   
-  const location = useLocation();
-  
-  console.log('WHAT IS THIS', location);
-  
   function isAuth()
   {
     if((user?.email === 'sazied@polyunity.com' || user?.email === 'marc-andre@polyunity.com') && isAuthenticated) setIsDemo(true)
@@ -43,6 +39,9 @@ function App()
   useEffect(() =>{
     isAuth();
   })
+  
+  console.log(window.location)
+  console.log(window.location.origin)
 
   return (
     <Fragment>
