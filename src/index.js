@@ -17,7 +17,7 @@ ReactDOM.render(
   <React.StrictMode>
     {
       location ? (
-        <Router>
+        <Router basename={process.env.PUBLIC_URL}>
           <Auth0ProviderWithHistory>
             <App />
           </Auth0ProviderWithHistory>
