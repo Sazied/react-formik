@@ -11,7 +11,7 @@ import AppRouter from './components/AppRouter';
 import Auth0ProviderWithHistory from './components/auth0-provider-with-history';
 
 
-const location = window.location.host.includes('github.io');
+const location = window.location.host.includes('github.iosss');
 
 ReactDOM.render(
   <React.StrictMode>
@@ -23,7 +23,7 @@ ReactDOM.render(
           </Auth0ProviderWithHistory>
         </Router>
       ) : (
-        <Router>
+        <Router basename={process.env.PUBLIC_URL}>
           <App />
         </Router>
       )
