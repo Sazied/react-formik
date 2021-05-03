@@ -11,7 +11,7 @@ import AppRouter from './components/AppRouter';
 import Auth0ProviderWithHistory from './components/auth0-provider-with-history';
 
 
-const location = window.location.host.includes('github.iosss');
+const location = window.location.host.includes('github.io');
 
 ReactDOM.render(
   <React.StrictMode>
