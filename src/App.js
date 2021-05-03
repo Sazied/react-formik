@@ -7,7 +7,7 @@ import React, { Fragment, useState, useEffect, Component} from 'react';
 import {
   BrowserRouter as Router,
   Switch,
-  Route as ProtectedRoute,
+  Route,
   Redirect,
   Link,
   useLocation
