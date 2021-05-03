@@ -53,7 +53,7 @@ function App()
             alt='react-logo'
           />
           <Switch>
-            <ProtectedRoute
+            <Route
               exact
               path='/'
               component={Profile}
