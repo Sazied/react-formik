@@ -17,13 +17,13 @@ ReactDOM.render(
   <React.StrictMode>
     {
       location ? (
-        <Router basename={process.env.PUBLIC_URL}>
+        <Router>
           <Auth0ProviderWithHistory>
             <App />
           </Auth0ProviderWithHistory>
         </Router>
       ) : (
-        <Router basename={process.env.PUBLIC_URL}>
+        <Router>
           <App />
         </Router>
       )
