@@ -7,7 +7,7 @@ import React, { Fragment, useState, useEffect, Component} from 'react';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
+  Route as ProtectedRoute,
   Redirect,
   Link,
   useLocation
@@ -22,6 +22,7 @@ import YoutubeForm from './components/YoutubeForm';
 import Profile from './components/Profile';
 import LogoutButton from './components/LogoutButton';
 import LoginButton from './components/LoginButton';
+import ProtectedRoute from './components/protected-route';
 
 
 function App()
@@ -52,38 +53,40 @@ function App()
             alt='react-logo'
           />
           <Switch>
-            <Route
+            <ProtectedRoute
               exact
               path='/'
-              render={() => <Profile />}
+              component={Profile}
             />
-            <Route
+            <ProtectedRoute
               path='/newform'
-              render={() =>
-                location ? (
-                isDemo ? (
-                  <FormikContainer />
-                  ) : (
-                    <Redirect to='/' />
-                  )
-                ) : (
-                  <FormikContainer />
-                )
-              }
+              // render={() =>
+              //   location ? (
+              //   isDemo ? (
+              //     <FormikContainer />
+              //     ) : (
+              //       <Redirect to='/' />
+              //     )
+              //   ) : (
+              //     <FormikContainer />
+              //   )
+              // }
+              component={FormikContainer}
             />
-            <Route
+            <ProtectedRoute
               path='/oldform'
-              render={() =>
-                location ? (
-                  isDemo ? (
-                    <YoutubeForm />
-                  ) : (
-                    <Redirect to='/' />
-                    )
-                  ) : (
-                  <YoutubeForm />
-                )
-              }
+              // render={() =>
+              //   location ? (
+              //     isDemo ? (
+              //       <YoutubeForm />
+              //     ) : (
+              //       <Redirect to='/' />
+              //       )
+              //     ) : (
+              //     <YoutubeForm />
+              //   )
+              // }
+              component={YoutubeForm}
             />
             <Route 
               component={() => (<h1>404 NOT FOUND</h1>)}
